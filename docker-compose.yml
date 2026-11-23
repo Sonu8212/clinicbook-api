@@ -1,0 +1,18 @@
+# Local development database.
+# 1. Create a file called .env next to this one containing:  MSSQL_SA_PASSWORD=YourStrong_Pass123
+#    (.env is git-ignored, so the password never reaches GitHub)
+# 2. docker compose up -d
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: clinicbook-sql
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:?Set MSSQL_SA_PASSWORD in a .env file}
+    ports:
+      - "1433:1433"
+    volumes:
+      - clinicbook-sql-data:/var/opt/mssql
+
+volumes:
+  clinicbook-sql-data:
