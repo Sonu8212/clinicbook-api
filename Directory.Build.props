@@ -6,5 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <!-- Run code-style rules from .editorconfig during build, not just in the editor. -->
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <!-- Warnings break the build in CI (GitHub Actions sets CI=true), but not on your machine while coding -->
+    <TreatWarningsAsErrors Condition="'$(CI)' == 'true'">true</TreatWarningsAsErrors>
   </PropertyGroup>
 </Project>

@@ -3,7 +3,7 @@ using System.Net.Http.Json;
 using ClinicBook.Api.Contracts;
 using Microsoft.AspNetCore.Mvc.Testing;
 
-namespace ClinicBook.Tests;
+namespace ClinicBook.IntegrationTests;
 
 /// <summary>
 /// Spins up the real API in memory (no network, no ports) and calls it over HTTP.
