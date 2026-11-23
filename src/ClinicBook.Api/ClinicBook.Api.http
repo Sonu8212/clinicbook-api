@@ -1,0 +1,17 @@
+@host = http://localhost:5080
+
+### Liveness
+GET {{host}}/health/live
+
+### Readiness
+GET {{host}}/health/ready
+
+### System info
+GET {{host}}/api/v1/system/info
+Accept: application/json
+
+### Unknown route -> 404 ProblemDetails
+GET {{host}}/api/v1/does-not-exist
+
+### OpenAPI document
+GET {{host}}/openapi/v1.json
